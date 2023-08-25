@@ -52,3 +52,12 @@ def build_read_assert(env, prompt_map):
             print(f"Invalid inputs provided for {template}:\n{e}")
     
     env.define_function(read_assert)
+    
+# this is needed for colab environment which doesn't work with native clips println function
+# clips defrules in colab should use print_out in place of println
+def build_print_out(env):
+
+    def print_out(text):
+        print(text)
+    
+    env.define_function(print_out)
