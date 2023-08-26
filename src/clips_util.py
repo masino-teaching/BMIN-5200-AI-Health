@@ -57,7 +57,10 @@ def build_read_assert(env, prompt_map):
 # clips defrules in colab should use print_out in place of println
 def build_print_out(env):
 
-    def print_out(text):
-        print(text)
+    def print_out(*args):
+        line = ''
+        for a in args:
+            line = f'{line} {a}'
+        print(line)
     
     env.define_function(print_out)
