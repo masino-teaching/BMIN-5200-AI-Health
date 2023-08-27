@@ -1,6 +1,9 @@
 import networkx as nx
 import random
 
+def test_colab_connection(your_name):
+    print(f"Hello, {your_name}. Your Colab connection was successful!")
+
 def hierarchy_pos(G, root=None, width=1., vert_gap = 0.2, vert_loc = 0, xcenter = 0.5):
 
     '''
